@@ -1,12 +1,11 @@
 # https://adventofcode.com/2020/day/4
+# 4data.txt was regexed
 
 import re
 
 requiredFields = ['byr:', 'iyr:', 'eyr:', 'hgt:', 'hcl:', 'ecl:', 'pid:']
 
 # Part 1
-
-
 def condition1(line):
     for field in requiredFields:
         if(re.search(field, line) is None):
@@ -14,8 +13,6 @@ def condition1(line):
     return True
 
 # Part 2
-
-
 def condition2(line):
     result = []
     for field in requiredFields:
@@ -27,8 +24,6 @@ def condition2(line):
     return result
 
 # Part 2
-
-
 def condition2_1(g):
     byr = int(g[0])
     iyr = int(g[1])
