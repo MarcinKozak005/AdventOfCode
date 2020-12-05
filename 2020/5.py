@@ -24,7 +24,7 @@ for line in lines:
 
     # Part 1
     if rowNum*8 + colNum > maxID:
-    maxID = rowNum*8 + colNum
+        maxID = rowNum*8 + colNum
 
     # Part 2
     taken.append(rowNum*8 + colNum)
