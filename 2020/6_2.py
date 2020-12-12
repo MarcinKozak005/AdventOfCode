@@ -1,7 +1,7 @@
 # https://adventofcode.com/2020/day/6
 # Input: two empty lines ('\n') were added at the end of the file
 
-f = open('6_2data.txt','r')
+f = open('6_2data.txt', 'r')
 lines = f.readlines()
 f.close()
 
