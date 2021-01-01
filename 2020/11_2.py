@@ -10,6 +10,15 @@ Seats legend:
 - -> was occupied is free
 L -> was free is free
 + -> was free is occupied
+
+ppp
+pxc
+ccc
+
+p - previous fields
+c - current fields
+
+By using such technique I don't have to use second table to store the results
 """
 
 prevFields = [(-1, -1), (-1, 0), (-1, 1), (0, -1)]
@@ -19,9 +28,18 @@ currFields = [(0, 1), (1, -1), (1, 0), (1, 1)]
 def checkFields(fields, row, col, tab):
     result = []
     for f in fields:
+        tmpR = row
+        tmpC = col
         try:
-            if row+f[0] >= 0 and col+f[1] >= 0:
-                result.append(tab[row+f[0]][col+f[1]])
+            while True:
+                tmpR += f[0]
+                tmpC += f[1]
+                if tmpR >= 0 and tmpC >= 0:
+                    if tab[tmpR][tmpC] != '.':
+                        result.append(tab[tmpR][tmpC])
+                        break
+                else:
+                    break
         except IndexError:
             pass
     return result
@@ -50,7 +68,7 @@ while changed:
             if tab[i][j] in ['-', 'L'] and numOfOcc == 0:
                 tab[i][j] = '+'
                 changed = True
-            elif tab[i][j] in ['+', '#'] and numOfOcc >= 4:
+            elif tab[i][j] in ['+', '#'] and numOfOcc >= 5:
                 tab[i][j] = '-'
                 changed = True
             elif tab[i][j] == '-':
