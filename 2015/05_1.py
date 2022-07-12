@@ -1,5 +1,4 @@
-
-file = open('05data.txt','r')
+file = open('05data.txt', 'r')
 
 nice = 0
 for line in file:
@@ -8,10 +7,10 @@ for line in file:
     prev = ''
     rule2 = False
     # For rule3 it's easier to assume it is fulfilled, and check for the violations
-    rule3 = True  
+    rule3 = True
     for char in line:
-        # rule 3 - is the most strict one, so check it first
-        if prev+char in ['ab', 'cd', 'pq', 'xy']:
+        # rule 3 - is the strictest one, so check it first
+        if prev + char in ['ab', 'cd', 'pq', 'xy']:
             rule3 = False
             break
         # rule 1
