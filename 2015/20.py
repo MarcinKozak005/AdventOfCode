@@ -1,15 +1,28 @@
-from math import sqrt
+divisors = {
+    1:[1],
+    2:[1,2]
+    }
 
 def get_divisors(num):
-    result = []
-    for i in range(1, int(sqrt(num))+1):
+    i = num -1
+    while True:
         if num % i == 0:
-            result.append(i)
-            result.append(num/i)
-    return result
+            result = []
+            y = divisors[i]
+            try:
+                z = divisors[int(num/i)]
+            except KeyError:
+                z = []
+            for e in y+z:
+                if num % e == 0:
+                    result.append(e)
+                    result.append(int(num/e))
+            divisors[num] = list(set(result))
+            return divisors[num]
+        i -= 1
 
 
-i = 10
+i = 2
 while True:
     print(i)
     if sum(get_divisors(i)) >= 3400000:
