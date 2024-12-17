@@ -1,7 +1,5 @@
-# Advent-of-Code
+# Python Solutions
 
-This repository contains my solutions to [Advent of Code](https://adventofcode.com/) problems
+Python solutions to various tasks, quizzes and problems.
 
-Stats update: 02.01.2024
-
-![Stats](./readme/stats.PNG)
+Go to the directory with the name of the "quiz" to see README.md about it. 
